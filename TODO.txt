@@ -1,0 +1,50 @@
+Fuzz and stress the website, use valgrind and clang-tidy/clang-format.
+
+Use <sys/queue.h>
+
+Se dovessi fare una galleria le foto dovrebbero essere scorribili
+orizontalmente. Tipo così:
+
+	ul.scrollmenu {
+		list-style-type: none;
+		overflow: auto;
+		white-space: nowrap;
+	}
+
+	.scrollmenu li {
+		display: inline-block;
+	}
+
+Invece che utilizzate l'attributo title del tag ancora potrei usare ::before e
+:hover come per man.openbsd.org .
+
+Posibili aggiunte:
+	* una parte con i gechi gia venduti (sotto) il catalogo
+TODO: aggungere una classe "offerta" magari usando ::before
+
+.offer::before {
+	content: "Offerta!";
+	background: yellow;
+	color: red;
+	/* maybe use a italic font */
+	/* https://stackoverflow.com/questions/35619709/how-to-create-offer-tag-with-css-and-pass-value-to-it */
+}
+TODO: add a naivgation bar?
+
+POST data in C can be read from stdin (talking about cgi)
+https://stackoverflow.com/questions/5451913/how-to-retrieve-form-post-data-via-cgi-bin-program-written-in-c
+
+http://zetcode.com/db/sqlitec/
+
+map GeckoList to html ul
+
+Maybe use a size bigger then 200x200 because on desktob it looks bad.
+for i in `ls`
+do
+	convert $i -resize 200x200 tiny_${i}
+done
+
+add microdata and rss feed for when new geckos are added
+
+identify -verbose *.jpg # for exif GPS data and IPTC
+convert gps.jpg  -strip stripped.jpg # to remove metadata

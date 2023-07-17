@@ -1,0 +1,92 @@
+:root {
+	--green: green;
+	--img-dimension: 200px;
+}
+.grass {
+	/* TODO: Remove white spaces around the grass */
+	background-image: url("grass.svg");
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-size: 10%;
+}
+.rough-font {
+	font-family: 'Piedra';
+	font-weight: normal;
+	color: var(--green);
+}
+h1 {
+	margin: 0;
+	font-size: 4em;
+}
+h2 {
+	text-align: center;
+}
+body {
+	margin: 20px 20px 20px 20px;
+	font-family: 'Roboto';
+	background-size: 100% 100px;
+	background-attachment: fixed;
+}
+.product-list {
+	list-style-type: none;
+	margin: auto;
+	padding: 0px 0px 0px 0px;
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.product-container {
+	--dist: 5px;
+	width: calc(var(--img-dimension) + var(--dist));
+	margin: 10px 10px 10px 10px;
+	padding: var(--dist) var(--dist) var(--dist) var(--dist);
+	border: 2px solid var(--green);
+	border-radius: 5%;
+	background-size: 300px 100px;
+	box-shadow: 24px 33px 63px -40px rgba(0,0,0,0.70);
+}
+.product-img {
+	border-radius: 50%;
+	height: var(--img-dimension);
+	width: var(--img-dimension);
+	transition: .2s ease-out;
+}
+.product-img:hover {
+	transition: transform .2s;
+	transform: scale(1.5);
+}
+.product-desc {
+	width: inherit;
+	word-wrap: break-word;
+}
+.float-left {
+	float: left;
+}
+.not-sale::before  {
+	/*
+	 * Per farlo veramente a modì banner dovrei impostare un colore di
+	 * background e mettere l'overflow del container (li) a hidden, per evitare
+	 * che i bordi della box escano fuori.
+	 */
+	content: "non in vendita!";
+	color: red;
+	text-align: center;
+
+	display: block;
+	position: relative;
+	top: 0;
+	right: 0;
+	transform: rotate(45deg)
+		translateX(calc(100% - 67%))
+		translateY(calc(100% - 260%));
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #1E1F21;
+		color: #EEEFF1;
+	}
+	:root {
+		--green: lightgreen;
+	}
+	/* TODO: rendere i link più chiari */
+}
